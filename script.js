@@ -23,6 +23,42 @@ themeToggle.addEventListener('click', () => {
   localStorage.setItem(THEME_KEY, next);
 });
 
+const ROLE_TEXT = "Communication globale & stratégie d'influence";
+const roleTextEl = document.getElementById('role-text');
+const roleCursorEl = document.getElementById('role-cursor');
+const badgeEl = document.getElementById('badge');
+const nameLastLetter = document.querySelector('[data-name-last]');
+const prefersReducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+function revealBadge() {
+  badgeEl.classList.add('is-visible');
+}
+
+function typeRole() {
+  let i = 0;
+  const step = () => {
+    if (i <= ROLE_TEXT.length) {
+      roleTextEl.textContent = ROLE_TEXT.slice(0, i);
+      i += 1;
+      setTimeout(step, 32);
+    } else {
+      roleCursorEl.classList.add('is-done');
+      revealBadge();
+    }
+  };
+  step();
+}
+
+if (prefersReducedMotionQuery.matches) {
+  roleTextEl.textContent = ROLE_TEXT;
+  roleCursorEl.classList.add('is-done');
+  revealBadge();
+} else if (nameLastLetter) {
+  nameLastLetter.addEventListener('animationend', typeRole, { once: true });
+} else {
+  typeRole();
+}
+
 const revealTargets = document.querySelectorAll('[data-reveal]');
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
