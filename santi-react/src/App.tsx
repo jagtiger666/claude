@@ -105,7 +105,7 @@ function Newsletter() {
 
 export default function App() {
   return (
-    <div className="relative w-full bg-background text-foreground min-h-screen font-sans selection:bg-primary/30 overflow-x-hidden">
+    <div className="leopard-bg relative w-full bg-background text-foreground min-h-screen font-sans selection:bg-primary/30 overflow-x-hidden">
       <Header />
       <Hero />
       <ProductCarousel />

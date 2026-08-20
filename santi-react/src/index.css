@@ -69,3 +69,14 @@
     @apply bg-background text-foreground;
   }
 }
+
+/*
+  Applied on the app's root surface (not body): the root div paints its own
+  opaque background-color over body, so the pattern has to live on the same
+  element to actually show through.
+*/
+.leopard-bg {
+  background-image: url("/images/leopard-pattern.svg");
+  background-size: 340px 340px;
+  background-attachment: fixed;
+}
