@@ -9,8 +9,8 @@ function Header() {
   return (
     <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/60">
       <div className="flex items-center justify-between px-6 md:px-12 py-5">
-        <a href="#top" className="font-display text-xl tracking-tighter">
-          SANTI<span className="text-primary align-super text-xs ml-0.5">®</span>
+        <a href="#top" className="block">
+          <img src="/images/logo.jpg" alt="SANTI" className="h-9 w-auto object-contain" />
         </a>
         <nav className="hidden md:flex items-center gap-8 font-mono text-xs tracking-widest">
           <a href="#grid" className="hover:text-primary transition-colors">[ ARCHIVE ]</a>

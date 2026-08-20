@@ -22,15 +22,14 @@ const STYLES = `
 }
 .carousel-card-media {
   background-color: color-mix(in oklch, var(--foreground) 6%, var(--background));
-  background-image: repeating-linear-gradient(135deg, color-mix(in oklch, var(--foreground) 5%, transparent) 0 2px, transparent 2px 16px);
 }
-.carousel-card-icon {
-  color: color-mix(in oklch, var(--foreground) 70%, transparent);
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), color 0.4s ease;
+.carousel-card-media img {
+  filter: grayscale(1) contrast(1.05) brightness(0.9);
+  transition: filter 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.carousel-card:hover .carousel-card-icon {
-  color: var(--primary);
-  transform: scale(1.08);
+.carousel-card:hover .carousel-card-media img {
+  filter: grayscale(0.2) contrast(1.05) saturate(1.1) brightness(0.95);
+  transform: scale(1.04);
 }
 .carousel-card-media::after {
   content: "";
@@ -46,75 +45,45 @@ export interface CarouselProduct {
   name: string;
   meta: string;
   price: string;
-  icon: React.ReactNode;
+  image: string;
   alt: string;
   tag?: string;
 }
 
-// Hand-drawn line-art placeholders in the SANTI brutalist style —
-// deliberately not stock photography, to keep the raw, industrial identity.
-const HoodieIcon = () => (
-  <svg viewBox="0 0 100 100" aria-hidden="true" className="w-[48%] h-[48%]">
-    <path d="M30 18 L38 10 H62 L70 18 L88 30 L78 46 L70 40 V88 H30 V40 L22 46 L12 30 Z" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinejoin="miter" />
-    <path d="M42 10 Q50 20 58 10" fill="none" stroke="currentColor" strokeWidth="2.2" />
-  </svg>
-);
-
-const CargoIcon = () => (
-  <svg viewBox="0 0 100 100" aria-hidden="true" className="w-[48%] h-[48%]">
-    <path d="M32 8 H68 L70 46 L84 90 L68 92 L58 52 L50 52 L42 92 L26 90 L30 46 Z" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinejoin="miter" />
-    <line x1="32" y1="20" x2="68" y2="20" stroke="currentColor" strokeWidth="2.2" />
-  </svg>
-);
-
-const BomberIcon = () => (
-  <svg viewBox="0 0 100 100" aria-hidden="true" className="w-[48%] h-[48%]">
-    <path d="M28 20 L40 10 H60 L72 20 L90 34 L80 50 L72 44 V88 H28 V44 L20 50 L10 34 Z" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinejoin="miter" />
-    <line x1="50" y1="12" x2="50" y2="88" stroke="currentColor" strokeWidth="2.2" />
-  </svg>
-);
-
-const CapIcon = () => (
-  <svg viewBox="0 0 100 100" aria-hidden="true" className="w-[48%] h-[48%]">
-    <path d="M20 52 Q50 24 80 52 L80 60 Q50 40 20 60 Z" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinejoin="miter" />
-    <path d="M80 54 L96 58 L82 64 Z" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinejoin="miter" />
-  </svg>
-);
-
 const DEFAULT_PRODUCTS: CarouselProduct[] = [
   {
     index: "01",
-    name: "Concrete Hoodie",
-    meta: "Heavyweight / 480GSM",
+    name: "Structured Vest",
+    meta: "Boiled Wool / Zip Front",
     price: "€ 420",
     tag: "NEW",
-    icon: <HoodieIcon />,
-    alt: "SANTI oversized concrete hoodie, front view",
+    image: "/images/product-01.jpg",
+    alt: "SANTI structured wool vest with logo cap, worn front view",
   },
   {
     index: "02",
-    name: "Angular Cargo",
-    meta: "Ripstop / 12 Pocket",
-    price: "€ 385",
-    icon: <CargoIcon />,
-    alt: "SANTI angular cargo trousers",
-  },
-  {
-    index: "03",
-    name: "Structured Bomber",
-    meta: "Raw Canvas / Unlined",
-    price: "€ 690",
-    tag: "LOW STOCK",
-    icon: <BomberIcon />,
-    alt: "SANTI structured bomber jacket",
-  },
-  {
-    index: "04",
     name: "Industrial Cap",
     meta: "Molded Peak / Steel Rivet",
     price: "€ 145",
-    icon: <CapIcon />,
-    alt: "SANTI industrial cap",
+    image: "/images/product-02.jpg",
+    alt: "SANTI industrial cap, close view",
+  },
+  {
+    index: "03",
+    name: "Concrete Crewneck",
+    meta: "Heavyweight / 480GSM",
+    price: "€ 385",
+    tag: "LOW STOCK",
+    image: "/images/product-03.jpg",
+    alt: "SANTI concrete crewneck sweatshirt, chest logo detail",
+  },
+  {
+    index: "04",
+    name: "Raw Tee",
+    meta: "Combed Cotton / Boxy Fit",
+    price: "€ 145",
+    image: "/images/product-04.jpg",
+    alt: "SANTI raw t-shirt, chest logo detail",
   },
 ];
 
@@ -278,12 +247,13 @@ export function ProductCarousel({
               key={product.index}
               className="carousel-card group snap-start shrink-0 basis-[85%] sm:basis-[55%] md:basis-[38%] lg:basis-[28%] bg-background flex flex-col select-none"
             >
-              <div
-                className="carousel-card-media relative aspect-[4/5] overflow-hidden flex items-center justify-center"
-                role="img"
-                aria-label={product.alt}
-              >
-                <div className="carousel-card-icon relative z-0">{product.icon}</div>
+              <div className="carousel-card-media relative aspect-[4/5] overflow-hidden">
+                <img
+                  src={product.image}
+                  alt={product.alt}
+                  draggable={false}
+                  className="w-full h-full object-cover object-top"
+                />
                 <span className="absolute top-3 left-3 z-10 font-mono text-xs tracking-widest bg-background text-foreground border border-border/70 px-2 py-1">
                   {product.index}
                 </span>
