@@ -199,20 +199,12 @@ body {
 }
 
 .avatar {
+  display: block;
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background: var(--ink);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.avatar span {
-  font-family: 'Fraunces', Georgia, serif;
-  font-size: 17px;
-  letter-spacing: -0.02em;
-  color: var(--canvas);
+  object-fit: cover;
+  background: var(--surface);
 }
 
 .eyebrow {
