@@ -4,6 +4,7 @@ import * as React from "react";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ShoppingBag, Mail } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 // Register ScrollTrigger safely for React
@@ -15,10 +16,7 @@ if (typeof window !== "undefined") {
 // 1. THEME-ADAPTIVE INLINE STYLES
 // -------------------------------------------------------------------------
 const STYLES = `
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap');
-
 .cinematic-footer-wrapper {
-  font-family: 'Plus Jakarta Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
 
   /* Dynamic Variables using standard shadcn/tailwind v4 tokens */
@@ -108,6 +106,7 @@ const STYLES = `
 
 /* Giant Background Text Masking */
 .footer-giant-bg-text {
+  font-family: var(--font-display);
   font-size: 26vw;
   line-height: 0.75;
   font-weight: 900;
@@ -121,6 +120,7 @@ const STYLES = `
 
 /* Metallic Text Glow */
 .footer-text-glow {
+  font-family: var(--font-display);
   background: linear-gradient(180deg, var(--foreground) 0%, color-mix(in oklch, var(--foreground) 40%, transparent) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -137,7 +137,7 @@ export type MagneticButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> 
     as?: React.ElementType;
   };
 
-const MagneticButton = React.forwardRef<HTMLElement, MagneticButtonProps>(
+export const MagneticButton = React.forwardRef<HTMLElement, MagneticButtonProps>(
   ({ className, children, as: Component = "button", ...props }, forwardedRef) => {
     const localRef = useRef<HTMLElement>(null);
 
@@ -211,11 +211,11 @@ MagneticButton.displayName = "MagneticButton";
 // -------------------------------------------------------------------------
 const MarqueeItem = () => (
   <div className="flex items-center space-x-12 px-6">
-    <span>Accountability Redefined</span> <span className="text-primary/60">✦</span>
-    <span>Transparent Tracking</span> <span className="text-secondary/60">✦</span>
-    <span>12-Step Progress</span> <span className="text-primary/60">✦</span>
-    <span>Sponsor Connection</span> <span className="text-secondary/60">✦</span>
-    <span>Absolute Privacy</span> <span className="text-primary/60">✦</span>
+    <span>Raw Luxury</span> <span className="text-primary/60">✦</span>
+    <span>Built Not Bought</span> <span className="text-primary/60">✦</span>
+    <span>Limited Runs</span> <span className="text-primary/60">✦</span>
+    <span>Cast Not Stitched</span> <span className="text-primary/60">✦</span>
+    <span>No Soft Edges</span> <span className="text-primary/60">✦</span>
   </div>
 );
 
@@ -301,7 +301,7 @@ export function CinematicFooter() {
             ref={giantTextRef}
             className="footer-giant-bg-text absolute -bottom-[5vh] left-1/2 -translate-x-1/2 whitespace-nowrap z-0 pointer-events-none select-none"
           >
-            SOBERS
+            SANTI
           </div>
 
           {/* 1. Diagonal Sleek Marquee (Top of footer) */}
@@ -318,38 +318,34 @@ export function CinematicFooter() {
               ref={headingRef}
               className="text-5xl md:text-8xl font-black footer-text-glow tracking-tighter mb-12 text-center"
             >
-              Ready to begin?
+              Ready to step out of line?
             </h2>
 
             {/* Interactive Magnetic Pills Layout */}
             <div ref={linksRef} className="flex flex-col items-center gap-6 w-full">
-              {/* App Store Links (Primary) */}
+              {/* Primary CTAs */}
               <div className="flex flex-wrap justify-center gap-4 w-full">
-                <MagneticButton as="a" href="#" className="footer-glass-pill px-10 py-5 rounded-full text-foreground font-bold text-sm md:text-base flex items-center gap-3 group">
-                  <svg className="w-6 h-6 text-muted-foreground group-hover:text-foreground transition-colors" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.04 2.26-.79 3.59-.76 1.56.04 2.87.67 3.55 1.76-3.13 1.77-2.62 5.92.35 7.14-.65 1.58-1.57 3.1-2.57 4.03zm-3.21-14.7c-.55 1.4-1.89 2.37-3.25 2.28.09-1.5 1.05-2.82 2.38-3.4 1.25-.57 2.66-.41 3.25.04-.15.35-.26.72-.38 1.08z" />
-                  </svg>
-                  Download iOS
+                <MagneticButton as="a" href="#grid" className="footer-glass-pill px-10 py-5 rounded-full text-foreground font-bold text-sm md:text-base flex items-center gap-3 group">
+                  <ShoppingBag className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
+                  Shop the Archive
                 </MagneticButton>
 
-                <MagneticButton as="a" href="#" className="footer-glass-pill px-10 py-5 rounded-full text-foreground font-bold text-sm md:text-base flex items-center gap-3 group">
-                  <svg className="w-6 h-6 text-muted-foreground group-hover:text-foreground transition-colors" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993.0004.5511-.4482.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993.0004.5511-.4482.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0222 3.503C15.5902 8.242 13.8533 7.85 12 7.85c-1.8533 0-3.5902.392-5.1369 1.1004L4.841 5.4475a.416.416 0 00-.5676-.1521.416.416 0 00-.1521.5676l1.9973 3.4592C2.6889 11.1867.3432 14.6589 0 18.761h24c-.3436-4.1021-2.6893-7.5743-6.1185-9.4396" />
-                  </svg>
-                  Download Android
+                <MagneticButton as="a" href="#signup" className="footer-glass-pill px-10 py-5 rounded-full text-foreground font-bold text-sm md:text-base flex items-center gap-3 group">
+                  <Mail className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
+                  Join the List
                 </MagneticButton>
               </div>
 
               {/* Secondary Text Links */}
               <div className="flex flex-wrap justify-center gap-3 md:gap-6 w-full mt-2">
                 <MagneticButton as="a" href="#" className="footer-glass-pill px-6 py-3 rounded-full text-muted-foreground font-medium text-xs md:text-sm hover:text-foreground">
-                  Privacy Policy
+                  Shipping
                 </MagneticButton>
                 <MagneticButton as="a" href="#" className="footer-glass-pill px-6 py-3 rounded-full text-muted-foreground font-medium text-xs md:text-sm hover:text-foreground">
-                  Terms of Service
+                  Returns
                 </MagneticButton>
                 <MagneticButton as="a" href="#" className="footer-glass-pill px-6 py-3 rounded-full text-muted-foreground font-medium text-xs md:text-sm hover:text-foreground">
-                  Support
+                  Contact
                 </MagneticButton>
               </div>
             </div>
@@ -360,15 +356,15 @@ export function CinematicFooter() {
 
             {/* Copyright */}
             <div className="text-muted-foreground text-[10px] md:text-xs font-semibold tracking-widest uppercase order-2 md:order-1">
-              © 2026 Volvox. All rights reserved.
+              © 2026 SANTI™. All rights reserved.
             </div>
 
-            {/* "Made with Love" Badge */}
+            {/* "Crafted with love" Badge */}
             <div className="footer-glass-pill px-6 py-3 rounded-full flex items-center gap-2 order-1 md:order-2 cursor-default border-border/50">
               <span className="text-muted-foreground text-[10px] md:text-xs font-bold uppercase tracking-widest">Crafted with</span>
               <span className="animate-footer-heartbeat text-sm md:text-base text-destructive">❤</span>
               <span className="text-muted-foreground text-[10px] md:text-xs font-bold uppercase tracking-widest">by</span>
-              <span className="text-foreground font-black text-xs md:text-sm tracking-normal ml-1">Volvox</span>
+              <span className="text-foreground font-black text-xs md:text-sm tracking-normal ml-1">SANTI</span>
             </div>
 
             {/* Back to top */}
