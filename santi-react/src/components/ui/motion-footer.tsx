@@ -211,11 +211,11 @@ MagneticButton.displayName = "MagneticButton";
 // -------------------------------------------------------------------------
 const MarqueeItem = () => (
   <div className="flex items-center space-x-12 px-6">
-    <span>Raw Luxury</span> <span className="text-primary/60">✦</span>
-    <span>Built Not Bought</span> <span className="text-primary/60">✦</span>
-    <span>Limited Runs</span> <span className="text-primary/60">✦</span>
-    <span>Cast Not Stitched</span> <span className="text-primary/60">✦</span>
-    <span>No Soft Edges</span> <span className="text-primary/60">✦</span>
+    <span>Luxe Brut</span> <span className="text-primary/60">✦</span>
+    <span>Construit Pas Acheté</span> <span className="text-primary/60">✦</span>
+    <span>Séries Limitées</span> <span className="text-primary/60">✦</span>
+    <span>Coulé Pas Cousu</span> <span className="text-primary/60">✦</span>
+    <span>Zéro Douceur</span> <span className="text-primary/60">✦</span>
   </div>
 );
 
@@ -318,7 +318,7 @@ export function CinematicFooter() {
               ref={headingRef}
               className="text-5xl md:text-8xl font-black footer-text-glow tracking-tighter mb-12 text-center"
             >
-              Ready to step out of line?
+              Prêt à sortir du rang ?
             </h2>
 
             {/* Interactive Magnetic Pills Layout */}
@@ -327,22 +327,22 @@ export function CinematicFooter() {
               <div className="flex flex-wrap justify-center gap-4 w-full">
                 <MagneticButton as="a" href="#grid" className="footer-glass-pill px-10 py-5 rounded-full text-foreground font-bold text-sm md:text-base flex items-center gap-3 group">
                   <ShoppingBag className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
-                  Shop the Archive
+                  Explorer l'Archive
                 </MagneticButton>
 
                 <MagneticButton as="a" href="#signup" className="footer-glass-pill px-10 py-5 rounded-full text-foreground font-bold text-sm md:text-base flex items-center gap-3 group">
                   <Mail className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
-                  Join the List
+                  Rejoindre la Liste
                 </MagneticButton>
               </div>
 
               {/* Secondary Text Links */}
               <div className="flex flex-wrap justify-center gap-3 md:gap-6 w-full mt-2">
                 <MagneticButton as="a" href="#" className="footer-glass-pill px-6 py-3 rounded-full text-muted-foreground font-medium text-xs md:text-sm hover:text-foreground">
-                  Shipping
+                  Livraison
                 </MagneticButton>
                 <MagneticButton as="a" href="#" className="footer-glass-pill px-6 py-3 rounded-full text-muted-foreground font-medium text-xs md:text-sm hover:text-foreground">
-                  Returns
+                  Retours
                 </MagneticButton>
                 <MagneticButton as="a" href="#" className="footer-glass-pill px-6 py-3 rounded-full text-muted-foreground font-medium text-xs md:text-sm hover:text-foreground">
                   Contact
@@ -356,14 +356,14 @@ export function CinematicFooter() {
 
             {/* Copyright */}
             <div className="text-muted-foreground text-[10px] md:text-xs font-semibold tracking-widest uppercase order-2 md:order-1">
-              © 2026 SANTI™. All rights reserved.
+              © 2026 SANTI™. Tous droits réservés.
             </div>
 
             {/* "Crafted with love" Badge */}
             <div className="footer-glass-pill px-6 py-3 rounded-full flex items-center gap-2 order-1 md:order-2 cursor-default border-border/50">
-              <span className="text-muted-foreground text-[10px] md:text-xs font-bold uppercase tracking-widest">Crafted with</span>
+              <span className="text-muted-foreground text-[10px] md:text-xs font-bold uppercase tracking-widest">Conçu avec</span>
               <span className="animate-footer-heartbeat text-sm md:text-base text-destructive">❤</span>
-              <span className="text-muted-foreground text-[10px] md:text-xs font-bold uppercase tracking-widest">by</span>
+              <span className="text-muted-foreground text-[10px] md:text-xs font-bold uppercase tracking-widest">par</span>
               <span className="text-foreground font-black text-xs md:text-sm tracking-normal ml-1">SANTI</span>
             </div>
 

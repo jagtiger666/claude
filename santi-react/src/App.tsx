@@ -14,7 +14,7 @@ function Header() {
         </a>
         <nav className="hidden md:flex items-center gap-8 font-mono text-xs tracking-widest">
           <a href="#grid" className="hover:text-primary transition-colors">[ ARCHIVE ]</a>
-          <a href="#signup" className="hover:text-primary transition-colors">[ ACCESS ]</a>
+          <a href="#signup" className="hover:text-primary transition-colors">[ ACCÈS ]</a>
         </nav>
       </div>
     </header>
@@ -31,16 +31,16 @@ function Hero() {
       />
       <div className="relative max-w-5xl">
         <p className="font-mono text-xs tracking-widest text-muted-foreground mb-6">
-          /// SS26 — UNIT NO. 001 — LIMITED RUN
+          /// SS26 — UNITÉ N° 001 — SÉRIE LIMITÉE
         </p>
         <h1 className="font-display uppercase leading-[0.94] tracking-tighter text-[clamp(2.5rem,10vw,8rem)]">
-          No<br />
-          Comfort<span className="text-primary">.</span><br />
-          No Compromise<span className="text-primary">.</span>
+          La<br />
+          Mode<br />
+          Éternelle<span className="text-primary">.</span>
         </h1>
         <p className="mt-8 max-w-xl text-base md:text-lg text-muted-foreground">
-          SANTI is not made to be worn softly. Raw concrete silhouettes, engineered for bodies
-          that refuse to blend in.
+          SANTI ne se porte pas en douceur. Des silhouettes brutes en béton, conçues pour les
+          corps qui refusent de se fondre dans la masse.
         </p>
         <div className="mt-10">
           <MagneticButton
@@ -48,7 +48,7 @@ function Hero() {
             href="#grid"
             className="inline-flex items-center gap-2 bg-foreground text-background font-mono text-sm tracking-widest px-7 py-4 hover:bg-primary transition-colors"
           >
-            ENTER THE ARCHIVE <ArrowRight className="w-4 h-4" />
+            ENTRER DANS L'ARCHIVE <ArrowRight className="w-4 h-4" />
           </MagneticButton>
         </div>
       </div>
@@ -63,13 +63,13 @@ function Newsletter() {
     <section id="signup" className="px-6 md:px-12 py-20 md:py-28 border-t border-border/60">
       <div className="max-w-2xl">
         <p className="font-mono text-xs tracking-widest text-muted-foreground mb-5">
-          /// RESTRICTED ACCESS
+          /// ACCÈS RESTREINT
         </p>
         <h2 className="font-display uppercase leading-[0.98] tracking-tighter text-[clamp(2rem,6vw,4rem)]">
-          Get in<br />before it<span className="text-primary">'</span>s gone<span className="text-primary">.</span>
+          Entre<br />avant que ce soit parti<span className="text-primary">.</span>
         </h2>
         <p className="mt-6 text-muted-foreground max-w-md">
-          Join the list. Drop alerts, archive access, zero noise.
+          Rejoins la liste. Alertes drops, accès à l'archive, zéro bruit.
         </p>
         <form
           className="mt-10 flex flex-col sm:flex-row border border-foreground"
@@ -78,25 +78,25 @@ function Newsletter() {
             setStatus("success");
           }}
         >
-          <label htmlFor="email" className="sr-only">Email address</label>
+          <label htmlFor="email" className="sr-only">Adresse email</label>
           <input
             id="email"
             type="email"
             required
-            placeholder="YOUR@EMAIL.COM"
+            placeholder="TON@EMAIL.COM"
             className="flex-1 bg-transparent px-5 py-4 font-mono text-sm tracking-wide outline-none placeholder:text-muted-foreground"
           />
           <button
             type="submit"
             className="font-mono text-sm tracking-widest px-7 py-4 bg-foreground text-background hover:bg-primary hover:text-primary-foreground transition-colors border-t sm:border-t-0 sm:border-l border-foreground"
           >
-            SUBSCRIBE →
+            S'ABONNER →
           </button>
         </form>
         <p className={`mt-4 font-mono text-[11px] tracking-widest ${status === "success" ? "text-primary" : "text-muted-foreground"}`}>
           {status === "success"
-            ? "[ ACCESS GRANTED — CHECK YOUR INBOX ]"
-            : "[ ONE EMAIL / MONTH. UNSUBSCRIBE ANYTIME. ]"}
+            ? "[ ACCÈS ACCORDÉ — VÉRIFIE TA BOÎTE MAIL ]"
+            : "[ UN EMAIL / MOIS. DÉSABONNEMENT À TOUT MOMENT. ]"}
         </p>
       </div>
     </section>

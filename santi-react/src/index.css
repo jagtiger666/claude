@@ -47,18 +47,18 @@
   --card-foreground: #f5f5f0;
   --popover: #111111;
   --popover-foreground: #f5f5f0;
-  --primary: #39ff14;
+  --primary: #00b5c8;
   --primary-foreground: #0a0a0a;
   --secondary: #1a1a1a;
   --secondary-foreground: #f5f5f0;
   --muted: #1a1a1a;
   --muted-foreground: #8a8a85;
   --accent: #1a1a1a;
-  --accent-foreground: #39ff14;
+  --accent-foreground: #00b5c8;
   --destructive: #ff3b3b;
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 12%);
-  --ring: #39ff14;
+  --ring: #00b5c8;
 }
 
 @layer base {

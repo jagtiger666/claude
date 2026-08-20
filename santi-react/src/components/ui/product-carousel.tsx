@@ -117,37 +117,37 @@ export interface CarouselProduct {
 const DEFAULT_PRODUCTS: CarouselProduct[] = [
   {
     index: "01",
-    name: "Structured Vest",
-    meta: "Boiled Wool / Zip Front",
+    name: "Gilet Structuré",
+    meta: "Laine Bouillie / Zip Frontal",
     price: "€ 420",
-    tag: "NEW",
+    tag: "NOUVEAU",
     image: "/images/product-01.jpg",
-    alt: "SANTI structured wool vest with logo cap, worn front view",
+    alt: "Gilet en laine structuré SANTI avec casquette logotée, vue de face",
   },
   {
     index: "02",
-    name: "Industrial Cap",
-    meta: "Molded Peak / Steel Rivet",
+    name: "Casquette Industrielle",
+    meta: "Visière Moulée / Rivet Acier",
     price: "€ 145",
     image: "/images/product-02.jpg",
-    alt: "SANTI industrial cap, close view",
+    alt: "Casquette industrielle SANTI, vue rapprochée",
   },
   {
     index: "03",
-    name: "Concrete Crewneck",
-    meta: "Heavyweight / 480GSM",
+    name: "Sweat Concrete",
+    meta: "Grammage Lourd / 480G/M²",
     price: "€ 385",
-    tag: "LOW STOCK",
+    tag: "STOCK FAIBLE",
     image: "/images/product-03.jpg",
-    alt: "SANTI concrete crewneck sweatshirt, chest logo detail",
+    alt: "Sweat col rond Concrete SANTI, détail du logo poitrine",
   },
   {
     index: "04",
-    name: "Raw Tee",
-    meta: "Combed Cotton / Boxy Fit",
+    name: "T-Shirt Brut",
+    meta: "Coton Peigné / Coupe Boxy",
     price: "€ 145",
     image: "/images/product-04.jpg",
-    alt: "SANTI raw t-shirt, chest logo detail",
+    alt: "T-shirt brut SANTI, détail du logo poitrine",
   },
 ];
 
@@ -244,10 +244,10 @@ export function ProductCarousel({
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-wrap items-baseline justify-between gap-4 mb-6 pb-6 border-b border-border/60 px-2">
           <h2 className="text-3xl md:text-5xl font-display tracking-tighter uppercase">
-            [ Current&nbsp;Drop ]
+            [ Drop&nbsp;Actuel ]
           </h2>
           <span className="font-mono text-xs tracking-widest text-muted-foreground uppercase">
-            {String(activeIndex + 1).padStart(2, "0")} / {String(products.length).padStart(2, "0")} Units
+            {String(activeIndex + 1).padStart(2, "0")} / {String(products.length).padStart(2, "0")} Unités
           </span>
         </div>
 
@@ -313,7 +313,7 @@ export function ProductCarousel({
             <MagneticButton
               as="button"
               onClick={() => step(-1)}
-              aria-label="Previous product"
+              aria-label="Produit précédent"
               className="pointer-events-auto w-11 h-11 rounded-full footer-glass-pill flex items-center justify-center text-muted-foreground hover:text-foreground"
             >
               <ChevronLeft className="w-4 h-4" />
@@ -321,7 +321,7 @@ export function ProductCarousel({
             <MagneticButton
               as="button"
               onClick={() => step(1)}
-              aria-label="Next product"
+              aria-label="Produit suivant"
               className="pointer-events-auto w-11 h-11 rounded-full footer-glass-pill flex items-center justify-center text-muted-foreground hover:text-foreground"
             >
               <ChevronRight className="w-4 h-4" />
@@ -337,7 +337,7 @@ export function ProductCarousel({
             <span className="font-mono text-lg">{active.price}</span>
             <MagneticButton
               as="button"
-              aria-label={`Add ${active.name} to cart`}
+              aria-label={`Ajouter ${active.name} au panier`}
               className="footer-glass-pill w-10 h-10 rounded-full flex items-center justify-center text-foreground hover:text-primary"
             >
               <Plus className="w-4 h-4" />
@@ -350,7 +350,7 @@ export function ProductCarousel({
             <button
               key={product.index}
               onClick={() => setActiveIndex(i)}
-              aria-label={`Go to ${product.name}`}
+              aria-label={`Aller à ${product.name}`}
               className={cn(
                 "h-1.5 rounded-full transition-all duration-300",
                 i === activeIndex ? "w-6 bg-primary" : "w-1.5 bg-muted-foreground/40"
