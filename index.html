@@ -4,21 +4,50 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Antoine Santi</title>
-<meta name="description" content="Antoine Santi — Communication globale &amp; stratégie d'influence.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23111111'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='15' fill='%23ffffff' text-anchor='middle'%3EAS%3C/text%3E%3C/svg%3E">
+<meta name="description" content="Antoine Santi — Communication globale &amp; stratégie d'influence. Diplômé ISEG Strasbourg, disponible à partir du 15 septembre 2026.">
+<meta name="theme-color" content="#F5F5F3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101114" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Antoine Santi">
+<meta property="og:description" content="Communication globale &amp; stratégie d'influence.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%2314151A'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='15' fill='%23ffffff' text-anchor='middle'%3EAS%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,340..600&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<div class="bg-layer" aria-hidden="true"></div>
+<a class="skip-link" href="#main">Aller au contenu</a>
 
-<main class="wrap">
+<div class="bg-layer" aria-hidden="true"></div>
+<div class="cursor-glow" aria-hidden="true"></div>
+
+<button id="theme-toggle" class="theme-toggle" type="button" aria-label="Changer de thème">
+  <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.6"/>
+    <path d="M12 2.5v2.4M12 19.1v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+  </svg>
+  <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+  </svg>
+</button>
+
+<main class="wrap" id="main">
 
   <section class="hero" data-reveal>
-    <div class="avatar" role="img" aria-label="Avatar d'Antoine Santi">
-      <span>AS</span>
+    <div class="hero-top">
+      <div class="avatar-ring">
+        <div class="avatar" role="img" aria-label="Avatar d'Antoine Santi">
+          <span>AS</span>
+        </div>
+      </div>
+      <span class="eyebrow">Portfolio personnel</span>
     </div>
-    <h1>Antoine Santi</h1>
+    <h1 class="kinetic" aria-label="Antoine Santi">
+      <span><span style="--i:0">A</span><span style="--i:1">n</span><span style="--i:2">t</span><span style="--i:3">o</span><span style="--i:4">i</span><span style="--i:5">n</span><span style="--i:6">e</span></span>
+      <span><span style="--i:7">S</span><span style="--i:8">a</span><span style="--i:9">n</span><span style="--i:10">t</span><span style="--i:11">i</span></span>
+    </h1>
     <p class="role">Communication globale &amp; stratégie d'influence</p>
     <span class="badge">Disponible à partir du 15 septembre 2026</span>
   </section>
@@ -45,13 +74,18 @@
           <span class="link-title">LinkedIn</span>
           <span class="link-sub">in/antoinesanti</span>
         </span>
+        <span class="link-arrow" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
       </a>
     </div>
   </section>
 
   <section class="block" data-reveal>
     <h2>Contact</h2>
-    <form id="contact-form" class="contact-form">
+    <form id="contact-form" class="contact-form" novalidate>
       <div class="field">
         <label for="name">Nom</label>
         <input type="text" id="name" name="name" autocomplete="name" required>
@@ -64,8 +98,13 @@
         <label for="message">Message</label>
         <textarea id="message" name="message" rows="5" required></textarea>
       </div>
-      <button type="submit">Envoyer</button>
-      <p id="form-note" class="form-note" aria-live="polite"></p>
+      <button type="submit">
+        <span>Envoyer</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <p id="form-note" class="form-note" role="status" aria-live="polite"></p>
     </form>
   </section>
 
