@@ -1,0 +1,260 @@
+:root {
+  --canvas: #FBFBFA;
+  --surface: #FFFFFF;
+  --border: #EAEAEA;
+  --ink: #111111;
+  --ink-soft: #2F3437;
+  --muted: #787774;
+  --accent-bg: #E1F3FE;
+  --accent-text: #1F6C9F;
+  --radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--ink-soft);
+  font-family: 'Helvetica Neue', 'Switzer', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.bg-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(600px circle at 20% 10%, rgba(31, 108, 159, 0.03), transparent 60%),
+    radial-gradient(500px circle at 85% 30%, rgba(159, 47, 45, 0.025), transparent 55%);
+}
+
+.wrap {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 96px 24px 64px;
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1), transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 72px;
+}
+
+.avatar {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 24px;
+  border-radius: 50%;
+  background: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar span {
+  font-family: 'Newsreader', 'Instrument Serif', Georgia, serif;
+  font-size: 32px;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+}
+
+h1 {
+  font-family: 'Newsreader', 'Instrument Serif', Georgia, serif;
+  font-size: 40px;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--ink);
+  margin: 0 0 8px;
+}
+
+.role {
+  color: var(--muted);
+  font-size: 16px;
+  margin: 0 0 20px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  background: #EDF3EC;
+  color: #346538;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.block {
+  margin-bottom: 56px;
+}
+
+h2 {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  font-weight: 600;
+  margin: 0 0 20px;
+}
+
+.bio {
+  font-size: 16px;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.links {
+  display: grid;
+  gap: 12px;
+}
+
+.link-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 200ms ease, transform 200ms ease;
+}
+
+.link-card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transform: translateY(-1px);
+}
+
+.link-icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: var(--accent-bg);
+  color: var(--accent-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.link-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.link-title {
+  font-size: 15px;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.link-sub {
+  font-size: 13px;
+  color: var(--muted);
+  font-family: 'SF Mono', 'JetBrains Mono', monospace;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+label {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+input,
+textarea {
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 14px;
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #C7C7C4;
+}
+
+button[type="submit"] {
+  align-self: flex-start;
+  background: var(--ink);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 22px;
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 200ms ease, transform 100ms ease;
+}
+
+button[type="submit"]:hover {
+  background: #333333;
+}
+
+button[type="submit"]:active {
+  transform: scale(0.98);
+}
+
+.form-note {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+  min-height: 18px;
+}
+
+.footer {
+  text-align: center;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+@media (max-width: 480px) {
+  .wrap {
+    padding: 64px 20px 48px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+}

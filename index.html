@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Antoine Santi</title>
+<meta name="description" content="Antoine Santi — Communication globale &amp; stratégie d'influence.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23111111'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='15' fill='%23ffffff' text-anchor='middle'%3EAS%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="bg-layer" aria-hidden="true"></div>
+
+<main class="wrap">
+
+  <section class="hero" data-reveal>
+    <div class="avatar" role="img" aria-label="Avatar d'Antoine Santi">
+      <span>AS</span>
+    </div>
+    <h1>Antoine Santi</h1>
+    <p class="role">Communication globale &amp; stratégie d'influence</p>
+    <span class="badge">Disponible à partir du 15 septembre 2026</span>
+  </section>
+
+  <section class="block" data-reveal>
+    <h2>À propos</h2>
+    <p class="bio">
+      Diplômé d'un Master en Communication Globale et Stratégie d'Influence à l'ISEG Strasbourg,
+      je possède une expérience en marketing digital, communication et gestion de projets,
+      acquise au sein de l'Agence eSanté Luxembourg puis de mycar.lu.
+    </p>
+  </section>
+
+  <section class="block" data-reveal>
+    <h2>Liens</h2>
+    <div class="links">
+      <a class="link-card" href="https://www.linkedin.com/in/antoinesanti/" target="_blank" rel="noopener noreferrer">
+        <span class="link-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.94 5a1.94 1.94 0 1 1-3.88 0 1.94 1.94 0 0 1 3.88 0ZM3.5 8.75h3.38V20.5H3.5V8.75Zm6.13 0h3.24v1.61h.05c.45-.85 1.56-1.75 3.21-1.75 3.44 0 4.07 2.26 4.07 5.2v6.69h-3.38v-5.93c0-1.41-.03-3.23-1.97-3.23-1.97 0-2.27 1.54-2.27 3.13v6.03H9.63V8.75Z" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="link-text">
+          <span class="link-title">LinkedIn</span>
+          <span class="link-sub">in/antoinesanti</span>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <section class="block" data-reveal>
+    <h2>Contact</h2>
+    <form id="contact-form" class="contact-form">
+      <div class="field">
+        <label for="name">Nom</label>
+        <input type="text" id="name" name="name" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+      <button type="submit">Envoyer</button>
+      <p id="form-note" class="form-note" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <span>&copy; 2026 Antoine Santi</span>
+  </footer>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
