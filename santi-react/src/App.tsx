@@ -34,9 +34,9 @@ function Hero() {
           /// SS26 — UNITÉ N° 001 — SÉRIE LIMITÉE
         </p>
         <h1 className="font-display uppercase leading-[0.94] tracking-tighter text-[clamp(2.5rem,10vw,8rem)]">
-          La<br />
-          Mode<br />
-          Éternelle<span className="text-primary">.</span>
+          Pour rugir<br />
+          comme un<br />
+          vrai tiger<span className="text-primary">.</span>
         </h1>
         <p className="mt-8 max-w-xl text-base md:text-lg text-muted-foreground">
           SANTI ne se porte pas en douceur. Des silhouettes brutes en béton, conçues pour les
